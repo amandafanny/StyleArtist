@@ -5,13 +5,14 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "48": "favicon.ico"
+      "48": "favicon_logosc/android-chrome-192x192.png"
     }
   },
   "permissions": ["activeTab", "storage"],
   "icons": {
-    "48": "favicon.ico",
-    "128": "favicon.ico"
+    "16": "favicon_logosc/favicon-16x16.png",
+    "48": "favicon_logosc/android-chrome-192x192.png",
+    "128": "favicon_logosc/android-chrome-192x192.png"
   },
   "content_security_policy": {
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
