@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Image Transformer",
+  "version": "1.0.0",
+  "description": "A Chrome extension that transforms images using OpenAI API.",
+  "icons": {
+    "16": "favicon.ico",
+    "48": "favicon.ico",
+    "128": "favicon.ico"
+  },
+  "permissions": ["activeTab"],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "favicon.ico",
+      "48": "favicon.ico",
+      "128": "favicon.ico"
+    }
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' blob:; object-src 'self'"
+}

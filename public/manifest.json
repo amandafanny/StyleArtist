@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Image Style Transfer",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "favicon.ico"
+    }
+  },
+  "permissions": ["activeTab", "storage"],
+  "icons": {
+    "48": "favicon.ico",
+    "128": "favicon.ico"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  }
+}
