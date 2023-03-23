@@ -52,7 +52,12 @@ app.post("/openai", upload.single("image"), async (req, res) => {
     res.json(response.data);
   } catch (error) {
     console.log("openai.createImageVariation=======error start");
-    console.error(error);
+    if (error.response) {
+      console.log(error.response.status);
+      console.log(error.response.data);
+    } else {
+      console.log(error.message);
+    }
     console.log("openai.createImageVariation=======error end");
     res
       .status(500)
