@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ImageUploader from "./ImageUploader";
+import ImageUploader, { FileInfo } from "./ImageUploader";
 import axios from "axios";
 import { tryCatch } from "./util/tryCatch";
 
@@ -33,8 +33,8 @@ const StyleTransfer: React.FC = () => {
     { url: string }[] | null
   >(null);
   const [inputImg, setInputImg] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string>("");
   const [loading, setLoading] = useState(false);
+  const [preview, setPreview] = useState<string>("");
 
   useEffect(() => {
     if (!chrome.storage) {
@@ -52,10 +52,11 @@ const StyleTransfer: React.FC = () => {
     });
   }, []);
 
-  const handleUpload = async (file: File) => {
+  const handleUpload = async ({ file, previewUrl }: FileInfo) => {
     // 调用 OpenAI API 的逻辑将在这里实现
     // 然后将处理后的图片 URL 设置为 imageURL 的值
     setInputImg(file);
+    setPreview(previewUrl);
   };
 
   const generate = async () => {
@@ -67,19 +68,18 @@ const StyleTransfer: React.FC = () => {
       });
     });
     if (inputImg) {
-      const reader = new FileReader();
-      reader.onloadend = async () => {
-        const imageUrl = reader.result as string;
-        setPreview(imageUrl);
-      };
-      reader.readAsDataURL(inputImg);
       const formData = new FormData();
       formData.append("image", inputImg);
       try {
         const response = await axios.post(
           // "http://34.125.228.69:3001/openai",
           "http://localhost:3001/openai",
-          formData
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
         );
         console.log(response);
         if (response.data.error) {

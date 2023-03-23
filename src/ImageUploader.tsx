@@ -5,8 +5,13 @@ const isValidPNG = (file: File) => {
   return file.type === "image/png";
 };
 
+export interface FileInfo {
+  file: File;
+  previewUrl: string;
+}
+
 interface ImageUploaderProps {
-  onUpload: (file: File) => void;
+  onUpload: (fileInfo: FileInfo) => void;
 }
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({ onUpload }) => {
@@ -49,9 +54,12 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onUpload }) => {
           console.log("File path and preview URL saved");
         });
       });
+      onUpload({
+        file,
+        previewUrl,
+      });
     };
     reader.readAsDataURL(file);
-    onUpload(file);
   };
 
   return (
