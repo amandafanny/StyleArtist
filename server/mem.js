@@ -28,7 +28,7 @@ app.post("/openai", upload.single("image"), async (req, res) => {
   try {
     const response = await openai.createImageVariation(
       buffer,
-      1,
+      4,
       "512x512",
       "url"
     );
