@@ -8,7 +8,7 @@
       "48": "favicon_logosc/android-chrome-192x192.png"
     }
   },
-  "permissions": ["activeTab", "storage"],
+  "permissions": ["activeTab", "storage", "unlimitedStorage"],
   "icons": {
     "16": "favicon_logosc/favicon-16x16.png",
     "48": "favicon_logosc/android-chrome-192x192.png",
