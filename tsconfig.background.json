@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "CommonJS",
-    "outDir": "./dist",
+    "target": "es2017",
+    "module": "commonjs",
+    "typeRoots": ["node_modules/@types", "node_modules"],
+    "types": ["chrome"],
+    "outDir": "./build",
     "strict": true,
+    //  TypeScript 的一个编译选项，用于启用模块的默认导入和导出行为。当这个选项被启用时，TypeScript 会在生成的 JavaScript 代码中使用 CommonJS 风格的导入和导出语法来处理 ES 模块。这个选项主要用于解决 CommonJS 和 ES 模块之间的兼容性问题。
     "esModuleInterop": true
   },
   "include": ["background/**/*.ts"]

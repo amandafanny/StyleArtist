@@ -1,5 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
+import { getBlob } from "./util/blob";
 
 interface ImageUploaderProps {
   onUpload: (file: File) => void;
@@ -7,6 +8,22 @@ interface ImageUploaderProps {
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({ onUpload }) => {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!chrome.storage) {
+      return;
+    }
+    // 恢复预览
+    const restore = async () => {
+      const selectedImage = await getBlob("selectedImage");
+      if (selectedImage) {
+        setPreviewUrl(URL.createObjectURL(selectedImage));
+      } else {
+        console.log("selectedImage not found");
+      }
+    };
+    restore();
+  }, []);
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {

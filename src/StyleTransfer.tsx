@@ -18,7 +18,6 @@ const StyleTransfer: React.FC = () => {
     }
     // 恢复预览状态
     chrome.storage.local.get(["previewUrl", "outputImageList"], (data) => {
-      console.log(data);
       if (data.previewUrl) {
         setPreview(data.previewUrl);
       }

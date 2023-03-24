@@ -17,6 +17,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
+#root {
+  min-width: 800px;
+  min-height: 1000px;
+  width: 100vw;
+  height: 100vh;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -30,7 +37,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 800px;
   min-height: 100vh;
 }
 

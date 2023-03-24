@@ -33,6 +33,7 @@ export default async function getCroppedImg(
         reject(new Error("Canvas is empty."));
         return;
       }
+      // URL.revokeObjectURL() 是一个浏览器提供的方法，用于释放通过 URL.createObjectURL() 创建的对象 URL。当您使用 URL.createObjectURL() 为一个 Blob 或 File 对象创建一个临时 URL 时，该 URL 会占用浏览器的内存，因为浏览器需要保持对底层资源的引用。这意味着，即使您不再需要这个 URL，浏览器仍然会保持对资源的引用，直到页面卸载。
       const croppedImageUrl = URL.createObjectURL(blob);
       resolve(croppedImageUrl);
     }, "image/png");

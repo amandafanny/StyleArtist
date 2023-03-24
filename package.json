@@ -6,7 +6,7 @@
   "description": "chatgpt",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run build:background",
     "preview": "vite preview",
     "build:background": "tsc -p tsconfig.background.json",
     "run:server": "cd server && pm2 start index.js"
