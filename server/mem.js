@@ -5,18 +5,16 @@ import multer from "multer";
 import * as dotenv from "dotenv";
 
 dotenv.config({ path: "../.env.local" });
-
 console.log(process.cwd());
-
-const app = express();
-const upload = multer({ storage: multer.memoryStorage() });
-const port = 3001;
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
 const openai = new OpenAIApi(configuration);
+
+const app = express();
+const upload = multer({ storage: multer.memoryStorage() });
+const port = 3001;
 
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
@@ -28,7 +26,7 @@ app.post("/openai", upload.single("image"), async (req, res) => {
   try {
     const response = await openai.createImageVariation(
       buffer,
-      1,
+      4,
       "512x512",
       "url"
     );

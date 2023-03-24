@@ -6,7 +6,7 @@
   "description": "chatgpt",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run build:background",
     "preview": "vite preview",
     "build:background": "tsc -p tsconfig.background.json",
     "run:server": "cd server && pm2 start index.js"
@@ -19,7 +19,9 @@
     "multer": "^1.4.5-lts.1",
     "openai": "^3.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-easy-crop": "^4.7.4"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.224",
