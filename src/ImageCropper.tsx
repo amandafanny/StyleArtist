@@ -23,6 +23,12 @@ const ImageCropper: React.FC<ImageCropperProps> = ({
       const response = await fetch(croppedImage);
       const croppedImageBlob = await response.blob();
 
+      const maxSize = 4 * 1024 * 1024; // 4MB
+      if (croppedImageBlob.size > maxSize) {
+        alert("图片不能超过 4MB，请重新裁剪。");
+        return;
+      }
+
       onCropComplete(croppedImageBlob);
     }
   }, [imageSrc, cropArea, onCropComplete]);
