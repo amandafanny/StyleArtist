@@ -44,6 +44,13 @@ const App: React.FC = () => {
     restore();
   }, []);
 
+  useEffect(() => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const tab = tabs[0];
+      console.log(tab.title);
+    });
+  });
+
   const handleImageUpload = (file: File) => {
     setSelectedImage(file);
     tryCatch(async () => {
