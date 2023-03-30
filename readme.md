@@ -1,3 +1,39 @@
+# StyleArtist
+
+Transform your images into different styles with ease.
+
+## Description
+
+StyleArtist is a Chrome extension that allows users to quickly and easily transform their images into different styles. With a simple right-click on an image, users can choose from a variety of preset styles, including oil painting, watercolor, pencil sketch, and more. The extension uses advanced AI algorithms to analyze and apply artistic styles to images, creating stunning visual effects that are sure to impress.
+
+## Installation
+
+1. Go to the Chrome Web Store: https://chrome.google.com/webstore/category/extensions
+2. Search for "StyleArtist" in the search bar.
+3. Click "Add to Chrome" to install the extension.
+
+## Usage
+
+1. Right-click on an image on any web page.
+2. Select "StyleArtist" from the context menu.
+3. Choose a style from the list of presets.
+4. Enjoy your newly styled image!
+
+## Features
+
+- Easy installation and setup
+- Variety of preset styles to choose from
+- Advanced AI algorithms for high-quality results
+- Fast and efficient image processing
+
+## Support
+
+If you have any questions or issues with the StyleArtist extension, please contact us at support@styleartist.com.
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
 ## 怎么使用
 
 ![](./img/demo1.png)
