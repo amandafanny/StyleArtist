@@ -7,6 +7,7 @@ interface ImageUploaderProps {
 }
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({ onUpload }) => {
+  // 用户上传图片的预览
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
   useEffect(() => {

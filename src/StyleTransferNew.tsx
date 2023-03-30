@@ -13,7 +13,7 @@ const StyleTransfer: React.FC<StyleTransferProps> = ({ croppedImageBlob }) => {
     { url: string }[] | null
   >(null);
   const [loading, setLoading] = useState(false);
-
+  // 裁剪之后的图片的预览
   const [previewUrl, setPreviewUrl] = useState<string>("");
 
   useEffect(() => {

@@ -12,9 +12,12 @@ const ImageCropper: React.FC<ImageCropperProps> = ({
   onCropComplete,
 }) => {
   const [crop, setCrop] = useState({ x: 0, y: 0 });
+  // 控制放大比例
   const [zoom, setZoom] = useState(1);
+  // 裁剪区域
   const [cropArea, setCropArea] = useState<Area | null>(null);
 
+  // 裁剪完成
   const handleCropComplete = useCallback(async () => {
     if (cropArea) {
       const croppedImage = await getCroppedImage(imageSrc, cropArea);
