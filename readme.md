@@ -14,21 +14,21 @@ StyleArtist is a Chrome extension that allows users to quickly and easily transf
 
 ## Usage
 
-1. Right-click on an image on any web page.
-2. Select "StyleArtist" from the context menu.
-3. Choose a style from the list of presets.
+1. Upload your image.
+2. Cut out it.
+3. Click generate.
 4. Enjoy your newly styled image!
 
 ## Features
 
 - Easy installation and setup
-- Variety of preset styles to choose from
+- Variety of preset styles to choose from(TODO)
 - Advanced AI algorithms for high-quality results
 - Fast and efficient image processing
 
 ## Support
 
-If you have any questions or issues with the StyleArtist extension, please contact us at support@styleartist.com.
+If you have any questions or issues with the StyleArtist extension, please contact us at issues.
 
 ## License
 
